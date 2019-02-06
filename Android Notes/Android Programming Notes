@@ -1,0 +1,212 @@
+
+
+
+will see Java in android source code
+can write java and kotlin in same project
+
+APK - actual application file
+Projects - 10+ hours each
+
+Focus on developing > 5.0
+
+Dalvik - is a JVM -- programs are compiled to Java byte code
+
+"Just in time compliation" - source code isnt compiled until its needed
+
+Android Runtime (APT) - replaced Dalvik
+"Ahead of time" compliation
+
+Open source -- good and bad; reason why every manufacturer has slightly different versions running on phones
+
+
+
+Monday - 1/28
+
+Layouts - visual structure of the UI
+
+created using XML (mostly) and/or directly in code (runtime)
+
+XML - predefined widgets and layouts
+
+Common layouts - ViewGroup (widgets that contain widgets)
+Linear, relative, and frame (allows for stacks), TableLayout (not commonly used), GridLayout,
+
+Constraints (apple/iOS like) - similiar to relative 
+
+*** layout_width, layout_height ** required on most constraints
+
+** android:id - A unique indentifier for the element * required
+
+Android strings - saved into a string.xml file
+
+findViewByID - computationally expensive
+
+Activities - become the Controller
+	Must  be added to the manifest file
+
+Lifecycle - similiar to iOS
+	setup done in onCreate(), usually.  Can be done in onStart() and onResume()
+
+Bundle - used to save configuration information, very small
+
+```
+onSaveInstanceState(outState: Bundle) // used to save states
+````
+
+ViewModel (new) - replacing Bundles
+
+ can use colors.xml to theme entire application 
+
+listener pattern */
+
+````
+var falseButton: Button? = null
+
+falseButton = findViewByID(R.id.falseButton)
+
+falseButton?.setOnClickListener { }
+
+
+import kotlinx.android.synthetic.main.activity_main.* // import everything in xml that has an id and use as a variable
+// no longer need to declare button as a variable, no longer need optional chaining
+````
+
+
+Wednesday 1/30
+
+What is Kotlin?
+
+Google adopted Kotlin as 1st class language
+
+More strict then Java
+
+backwards compatiable with java to 1.6
+
+almost 100% interoperable with Java -- can be written to not be compatiable
+
+Anko framework - simplifies network calls; one liners.
+
+can have Kotlin/Java in same package but not in same file
+can have multiple classes in a Kotlin file; not in java
+
+type comes after variable name.  return type comes after
+
+````
+
+myvariable: Int
+
+fun sum(a:Int, b:Int): Int{
+	return a + b
+}
+
+````
+
+
+
+defining variables
+
+var is mutable; val is immutable
+type is inferred
+
+````
+var PI = -3.14 //infers type as Double
+var x = 0  //infers type as Int
+
+// can also var PI: float = -3.14 to force as float
+
+````
+
+functions can be store to a property
+
+Any - > a generic type (sort of); good for when you don't know what it'll be
+type checking with keyword is
+
+````
+if (x is String) {  ... }
+
+Once you check type, obj is guaranteed to be that type
+works for subclasses too
+
+Ex
+
+if (fox is Animal) or if (fox is Mammal)
+
+Better way -
+
+---------------------
+when (x) {
+	is Int -> print(x + 1)
+	is String -> print(x.length + 1)
+	is IntArray -> print(x.sum())
+
+}
+---------------------
+
+Cast same as swift
+
+use as keyword
+
+Dealing with Nulls - use ?
+
+````
+
+var x:String? = null   // x is nullable
+
+val x: String? = y as? String  //if y is a string, then can be put in xl if it fails then x is null
+
+`````
+
+strings store in a string.xml
+
+<resources>
+	<string name = "an example string">exampleString</string>
+</resources>
+	
+
+
+writing a constructor
+
+'''
+class QuizModel(){
+	val questions: ArrayList<Question>
+	var position: Int = 0
+
+	constructor() {
+		this.question = arrayListOf(
+		Question(R.string.question_ocean, isTrue: true),
+		Question(R.string.question_mideast, isTrue: false)
+		)
+	}
+}
+
+OR
+
+class QuizModel(){
+	val questions:ArrayList<Question> = arrayListOf(
+		Question(R.string.question_ocean, isTrue: true),
+		Question(R.string.question_mideast, isTrue: false)
+	)
+}
+
+'''
+
+unique to Kotlin vs Java
+
+data class Question(val questionResId: Int, val isTrue: Boolean)
+
+replaces need for getters/setters from Java
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

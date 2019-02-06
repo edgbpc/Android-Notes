@@ -25,6 +25,9 @@
 /* Begin PBXFileReference section */
 		C34B6E58220BA4DB002A7BAB /* Android Notes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Android Notes"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34B6E5B220BA4DB002A7BAB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C34B6E62220BA501002A7BAB /* Android Programming Notes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Android Programming Notes"; sourceTree = "<group>"; };
+		C34B6E63220BA501002A7BAB /* Android+Programming.pptx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Android+Programming.pptx"; sourceTree = "<group>"; };
+		C34B6E64220BA501002A7BAB /* Android Programming.pptx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Android Programming.pptx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,9 @@
 		C34B6E5A220BA4DB002A7BAB /* Android Notes */ = {
 			isa = PBXGroup;
 			children = (
+				C34B6E62220BA501002A7BAB /* Android Programming Notes */,
+				C34B6E64220BA501002A7BAB /* Android Programming.pptx */,
+				C34B6E63220BA501002A7BAB /* Android+Programming.pptx */,
 				C34B6E5B220BA4DB002A7BAB /* main.cpp */,
 			);
 			path = "Android Notes";
