@@ -28,6 +28,7 @@
 		C34B6E62220BA501002A7BAB /* Android Programming Notes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Android Programming Notes"; sourceTree = "<group>"; };
 		C34B6E63220BA501002A7BAB /* Android+Programming.pptx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Android+Programming.pptx"; sourceTree = "<group>"; };
 		C34B6E64220BA501002A7BAB /* Android Programming.pptx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Android Programming.pptx"; sourceTree = "<group>"; };
+		C34B6E65220BAB2E002A7BAB /* Project 1 notes */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Project 1 notes"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +65,7 @@
 				C34B6E64220BA501002A7BAB /* Android Programming.pptx */,
 				C34B6E63220BA501002A7BAB /* Android+Programming.pptx */,
 				C34B6E5B220BA4DB002A7BAB /* main.cpp */,
+				C34B6E65220BAB2E002A7BAB /* Project 1 notes */,
 			);
 			path = "Android Notes";
 			sourceTree = "<group>";

@@ -196,6 +196,54 @@ data class Question(val questionResId: Int, val isTrue: Boolean)
 
 replaces need for getters/setters from Java
 
+lateinit - property that is uninitalized; assumes you will initalize before using
+
+kotlin handles static/class variables different then java
+use "Companion" object - one per class
+
+----
+companion object {
+    private const val POSITION_KEY = "Position"
+    private const val TAG = "MainActivity"
+}
+
+usuage:
+
+outState?.putInt(POSITION_KEY, model.position)
+
+
+check if nullable value exists :
+val position = savedInstanceState?.getInt(POSITION_KEY, 0)// overloaded function - the 0 gives optional value
+
+?: //if null then assign 0
+val position = savedInstanceState?.getInt(POSITION_KEY, 0) ?: 0
+
+Activities -
+    the user interaction
+    Activity Manager - OS level framework that manages all activities
+    has number of methods, can get device information; global OS componetent
+
+easy to start activity
+
+startActivity(intent: intent)
+also
+startActivityForResult(intent: Intent, code Int)
+
+Intents - how to communicate between Activities via Activity Manager
+main uses:
+start acitivity, start service, start a broadcast
+
+types:
+Explicit and Implicit
+
+Activity A -> startActivity -> Intent -> Android System -> Intent -> oncreate -> activity B
+
+elements:
+Component Name (optional) - makes it explicit ex - com.example.ActivityClassName
+
+
+
+
 
 
 

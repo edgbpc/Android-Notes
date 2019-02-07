@@ -1,0 +1,12 @@
+DUE MONDAY MARCH 4TH
+
+create simon game
+-memory game
+show user a sequence, player repeats
+
+start screen - select difficulty
+important - clean up resources
+
+SEPERATE THE CODE .. MVC .. do not store data in views or controller
+all data in model class
+
