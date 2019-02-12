@@ -241,10 +241,49 @@ Activity A -> startActivity -> Intent -> Android System -> Intent -> oncreate ->
 elements:
 Component Name (optional) - makes it explicit ex - com.example.ActivityClassName
 
+Explicit intent - starts specific service
+
+Implicit Intent - device owner choses what to open
+
+https://developer.android.com/guide/components/intents-filters
+
+extras - assigning data to your intent
+
+shutting down the activity -
+finish()
+finishActivity(requestCode: Int)
+let system finish it (use back button)
+
+Debugging
+click on bug to start debugging mode
+
+methods:
+stack trace, break points, exception breakpoints, logging, android lint (ide sqiggles)
+
+stack trace - call history to see what failed
+log exceptions
+log.d(TAG, "String", Exception());
+
+Exception Breakpoint - stops on an exception; pauses the app before the exception
+
+android link - finds defect in code without running it, running all the time
 
 
+Logging -
 
 
+scopes
+
+Internal - available to the module
+private - only that class can use
+public - exposed publically, anyone can use
+open - anyone can use it and overright it
+
+
+setContentView() -- call to attach class to activity
+
+activities must be in the manifest to start
+"unable to find explicit activity class ..." = activity not in manifest
 
 
 
