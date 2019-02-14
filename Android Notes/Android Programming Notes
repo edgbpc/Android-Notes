@@ -286,13 +286,72 @@ activities must be in the manifest to start
 "unable to find explicit activity class ..." = activity not in manifest
 
 
+kind of switchs statement
+
+val messageResID = when {
+    isCheater -> R.string.judgement_toast_text
+    correct -> R.string.correct_toast_text
+    else -> R.string.incorrect_toast_text
+}
+
+also
+
+val messageResID = when {
+    true -> R.string.judgement_toast_test
+    false -> when (correct)
+    isCheater -> R.string.judgement_toast_text
+    correct -> R.string.correct_toast_text
+    else -> R.string.incorrect_toast_text
+}
+
+
+Fragments - can prvent them from being destroyed when the screen is changed
+
+roles:
+1. UI component
+2.controlling behavior/data
+
+similiar lifecycle methods
+
+layouts created in onCreateView()
+
+can also add to xml
+
+<fragment>
+
+tools:layout="@layout/fragment_layout" -> tells preview to draw layout inside of the fragment
+
+getFragmentByID() -- id added by programmer
+getFragmentByTag()
+
+popBackStack() - back button for fragments
+
+fragment communication to parent
+create a listener (delegate)
+
+Java way -
+    create public interface
+    set of definations  (protocals from swift)
+
+mListener = (MyFragementListener) activity;
+
+class MainActivity : Activity(), CheatActivity.CheatingListener {
+    override fun userDidSeeAnswer () {
+        isCheater = True;
+    }
+
+
+}
+
+
+class CheatActivity: AppCompatActivity {
 
 
 
+}
 
 
-
-
+listener?.userDidSeeAnswer();
 
 
 
