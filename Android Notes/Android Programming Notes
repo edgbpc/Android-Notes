@@ -353,6 +353,79 @@ class CheatActivity: AppCompatActivity {
 
 listener?.userDidSeeAnswer();
 
+Main Thread - Also known as the UI Thread. Process all UI related events.
 
+all events triggered from UI widgets run on this thread.
+developer has to design app to be multithreaded
+
+DON'T DO-
+Block the main thread.  Long running processes should be run on a different thread.  Dispatc to another thread.
+Long running threads:
+Network calls, loops. Networking calls do not use another thread by default
+Update the UI outside of the main thread.
+
+DO -
+create new thread.  "background or worker thread"
+POSt messages back to the main thread
+keep app responsive
+
+Create a runnable and a handler.  maybe thread pool
+OR
+subclass of AsyncTask
+
+HARD WAY --> probably won't do this much in class or in projects
+-create executor/execute tasks
+tons of processes - use a thread pool.  run it in the background
+developer can see # of cores, pool size, keep alive, and other stats.
+Only can use as many cores as device has.  OS will limit
+
+examples -- see slides
+Executors.newFixedThreadPool(count)
+
+Uses - lots of HTTP requests, heavy image processes, high platform utilization, reduces thread overhead
+
+Thread -
+val thread - Thread(Runnable() { ... })
+thread.start()
+
+can't stop or cancel a thread (deprecated)
+great for 1 and done tasks, posting messages to the UI (might use this in class/projects)
+
+Handler Thread - better version of thread (see slide deck)
+
+Create a project -
+
+Flashy
+
+fragment class
+
+
+fragment_flashy
+
+Need to rewatch video for portion on coding
+
+fragments will be optional
+
+private var viewFragment: FlashyViewFragment? = null
+
+override fun onCreate(savedInstanceState: Bundle?){
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+
+    viewFragment = supportFragmentManager.findFragmentById(R.id.testContainer, FlashyViewFragment::class.java ) as? FlashyViewFragment
+    if (viewFragment == null){
+        viewFragment = FlashyViewFragment()
+        supportFragmentManager.beingTransaction()
+        .add(R.id.testContainer, viewFragment())
+        .commit()
+    } else {
+        Log.e( ..)
+    }
+
+}
+
+retainInstance = true // keeps a fragment from being destroyed
+
+fragments cannot speak to each other.  must communicate via activities
 
 
