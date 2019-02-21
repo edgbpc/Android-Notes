@@ -429,3 +429,53 @@ retainInstance = true // keeps a fragment from being destroyed
 fragments cannot speak to each other.  must communicate via activities
 
 
+android for in loop
+
+for (index in 0 until 4) { .. }  == for (int i = 0, i < 4, i++) { .. }
+    //useful for the buttons in Simon app
+
+fun runUIUpdate() {
+for (index in 0 until 4) {
+    val view = when(index) {
+        0 -> startButton
+        1 -> stopButton
+        2 -> flashy1
+        else -> flashy2
+        }
+    }
+}
+
+
+void doSomething(String... strings) /// ... means multiple
+
+Android way
+
+fun doSomething(vararg strings: String) { ... }
+
+val animator = ValueAnimator.ofObject(ArgbEvaluator(), originalColor?.color, R.color.colorAccent, originalColor?.color) // can but in as many colors as desired
+
+
+val redColor = ContextCompat.getColor(activity, R.color.colorRed)
+
+animator?.startDelay = (index * 200).toLong()
+
+Runnable constructor takes a function.
+when defining a runnable, ide will try to force a lambda
+
+private var runnable: Runnable = Runnable {
+    listener?.sequenceTriggered()
+
+}
+
+
+Androids will continue to run in background unless swipped up to force close.  its a bug
+
+to fix in our apps
+
+fun stopSequence(){
+    handler?.removeCallbacks(runnable)
+    handler? = null
+}
+
+back button also deallocates
+
