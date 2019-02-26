@@ -479,3 +479,43 @@ fun stopSequence(){
 
 back button also deallocates
 
+Animator XML file
+
+<objectAnimator>
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    //to do properities
+    android: <some property>="something"
+
+    android:propertyName="textColor"  //an example
+    ....
+
+
+
+Material Design Objects
+
+material.io - https://material.io
+
+state - current status of a material
+.state_enabled
+
+
+what is animation?
+
+visible change to a view.
+position, color, opacity, etc - animatable objects
+
+AnimationDrawable
+typically XML animator
+res/drawable
+
+good for image transitions
+
+Vector images - stored as lines instead of pixels
+biggest advantage - scalable without pixelzation
+
+<vector>
+multiple animators ok in single animator
+
+
+
+
