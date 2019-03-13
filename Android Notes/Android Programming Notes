@@ -517,5 +517,109 @@ biggest advantage - scalable without pixelzation
 multiple animators ok in single animator
 
 
+Project 2
+
+create multiple list
+select a list, add items
+rotation support, data storage  - probably sql lite
+card views for 1st page
+popping portion of screen to add items
+
+back to material design
+
+lots of widgets including xcode storyboard like
+
+Material cardview
+
+ext of framelayout
+layout.xml
+appcard:elevation for shadow
+
+snackbar - alternative to toast but not a replacment
+the "+" key
+
+snackbar.make()
+
+task.execute()
+
+override DownloadTask: AsyncTask<String, Unit, JSONArray?{
+    //get a URL
+    val url = URL(params[0[]) //from the based in values
+    val httpClient = url.openConnection() as HttpURLConnection
+    httpClient.requestMethod = "GET"  // GET (everything exposed in URL), PUT, POST, Delete ..most common
+
+    var resultString = ""
+
+    when (httpClient.responseCode) {
+        200, 201 -> {
+            val inStream = httpClient.inoutStream
+            val reader = BufferedReader(InputStreamReader(inStream))
+
+            var dataString = read.readLine()
+
+            while (dataString != null)  {
+                resultString += dataString
+                dataString = reader.readLine()
+            }
+            reader.close()
+            httpClient.disconnect()
+        }
+        else -> {
+            httpClient.disconnect(){
+
+        }
+    }
+
+        return JSONArray(resultString)   //returns key-value map
+}
+
+    return null
+}
 
 
+calling .get on async blocks UI
+
+fixable
+
+in asynctask class --
+
+change to no longer turn jsonArray , change to UNit.  no longer returns
+
+new declaration --  class Downloadtask: AsynTask<String, Unit, Unit>() { .. }
+
+
+warning:  outer class can be destroyed with inner class still active.  casuses a memory leek
+
+add responseData = JSONArray(resultString)
+
+var responseData: JSONArray? = null
+var executeLater: ((JSONArray?) -> Unit)? = null
+var listener: ((JSONArray)
+
+fun onDownload (listener: ((JSONArray?)) -> Unit)?) {
+    listener?.invoke(responseData)
+
+val clousure
+}
+
+recycler view--
+3 compontents - viewholder(holds view for content), adpater (very important), manager
+
+cars_listing_fragment
+root element - androidx.recyclerview.widget.RecyclerView
+
+cars_items_layout
+car view
+
+
+two contexts in android
+applicationActivity
+fragment (this.activity)
+
+inner class CarsAdapter(view: RecyclerView.Viewholder): RecylerView.Adapter<RecyclerView.ViewHolder>(view) {
+
+override fun onCreateViewHolder( .. ) { ..}
+override fun 
+
+
+}

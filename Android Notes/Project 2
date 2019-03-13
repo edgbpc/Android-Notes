@@ -1,0 +1,21 @@
+Create a shopping List
+
+no limit to list of items
+
+Price - running total (optional)
+Must use recycler view
+
+Fragments
+unique identifier - swift UUID
+SQL Lite/Room
+
+data in activity - really just need state.  should be in model later
+"business logic" is data
+
+Migrating to AndroidX - needed for cardview add to module app
+implemmentation 'androidx.cardview:cardview:1.0.0'
+
+lateint - for when you absolutely sure that something will exisit.  avoid dealing with null and ?
+
+
+
